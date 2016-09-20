@@ -1,9 +1,18 @@
+import React from 'react';
 import { Component } from 'react';
 import { render } from 'react-dom';
+import App from './App';
 
-class App extends Component {
-     render() {
-          return <h1>Hey it worked</h1>;
-     }
+const renderApp = () => {
+     render(<App/>, document.querySelector('#root'));
 }
-render(<App/>, document.querySelector('#root'));
+
+renderApp();
+
+if (module.hot) {
+     module.hot.accept('./App', () => {
+          const HotApp = require('./App').default;
+          renderApp();
+          return true;
+     })
+}
