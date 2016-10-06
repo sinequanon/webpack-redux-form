@@ -1,18 +1,19 @@
-import React from 'react';
-import { Component } from 'react';
-import { render } from 'react-dom';
-import App from './App';
+import React from 'react'
+import { Component } from 'react'
+import { render } from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+import Root from './Root'
 
 const renderApp = () => {
-     render(<App/>, document.querySelector('#root'));
+  render(<AppContainer><Root/></AppContainer>, document.querySelector('#root'))
 }
 
-renderApp();
+renderApp()
 
 if (module.hot) {
-     module.hot.accept('./App', () => {
-          const HotApp = require('./App').default;
-          renderApp();
-          return true;
-     })
+  module.hot.accept('./Root', () => {
+    const HotApp = require('./Root').default
+    renderApp()
+    return true
+  })
 }
