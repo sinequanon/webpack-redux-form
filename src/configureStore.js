@@ -1,15 +1,18 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import createLogger from 'redux-logger'
 import reducers from './Reducers'
 import thunkMiddleware from 'redux-thunk'
 
 export default () => {
   const loggerMiddleWare = createLogger()
+  // Support redux dev tools
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
   const store = createStore(
     reducers,
-    applyMiddleware(
-      thunkMiddleware,
-      loggerMiddleWare
+    composeEnhancers(
+      applyMiddleware(
+        thunkMiddleware,
+        loggerMiddleWare)
     )
   )
 
