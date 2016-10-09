@@ -1,11 +1,8 @@
 import { combineReducers } from 'redux';
-
-const basicReducer = (state = {}, action) => { 
-  return state
-}
+import { reducer as formReducer } from 'redux-form'
 
 export default combineReducers({
-  basicReducer
+  form: formReducer // important to mount the reducer as 'form'
 })
 
 

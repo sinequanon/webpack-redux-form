@@ -1,7 +1,7 @@
 {
-  "name": "base-webpack",
+  "name": "webpack-redux-form",
   "version": "1.0.0",
-  "description": "Base webpack project",
+  "description": "Webpack with redux and redux-form",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -27,6 +27,7 @@
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
     "redux": "^3.6.0",
+    "redux-form": "^6.0.5",
     "redux-thunk": "^2.1.0"
   }
 }
